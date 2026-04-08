@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>温柔小治愈 💌</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "微软雅黑", sans-serif;
+        }
+        body {
+            background: #FFF5F7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(255, 105, 180, 0.2);
+            max-width: 400px;
+            width: 100%;
+        }
+        .heart {
+            font-size: 40px;
+            animation: blink 1s infinite alternate;
+            color: #FF69B4;
+        }
+        @keyframes blink {
+            0% { opacity: 0.7; }
+            100% { opacity: 1; }
+        }
+        .text {
+            font-size: 18px;
+            color: #8B4513;
+            margin: 20px 0;
+            line-height: 1.6;
+        }
+        .btn {
+            background: #FFB6C1;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background: #FF69B4;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="heart">❤️</div>
+        <div class="text" id="warmText">正在为你准备温柔...</div>
+        <button class="btn" onclick="newMessage()">收下这份温柔 ✨</button>
+    </div>
+
+    <script>
+        const words = [
+            "你真的很棒，今天也要好好爱自己呀❤️",
+            "累了就歇一歇，世界很温柔，你也值得被温柔对待✨",
+            "慢慢来，一切都会越来越好的🌞",
+            "你已经很努力了，给自己一个拥抱吧🤗",
+            "生活有点苦，但你很甜🍬",
+            "别担心，所有美好都在奔向你🌟",
+            "你值得世间所有温柔与善意🌸",
+            "今天也要开心呀，因为你值得😊",
+            "累了就停下来，我一直都在陪着你💖",
+            "你超棒的，继续闪闪发光吧✨"
+        ];
+
+        function newMessage() {
+            const text = document.getElementById("warmText");
+            text.innerText = words[Math.floor(Math.random() * words.length)];
+        }
+
+        // 自动刷新一句
+        newMessage();
+    </script>
+</body>
+</html>
